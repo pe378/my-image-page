@@ -1,24 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>画像表示ページ</title>
+    <title>My Website</title>
 
     <style>
         body {
             margin: 0;
+            background: black;
         }
 
-        img {
+        /* 最初の画面 */
+        #start {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 15px 40px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* 画像 */
+        #main-image {
+            display: none;
             width: 100vw;
             height: 100vh;
             object-fit: contain;
-            display: block;
         }
     </style>
 </head>
 
 <body>
-    <img src="image.jpg" alt="表示画像">
+
+    <!-- 最初の画面 -->
+    <div id="start">
+        <button onclick="showImage()">ENTER</button>
+    </div>
+
+    <!-- 表示する画像 -->
+    <img id="main-image" src="image.jpg" alt="表示画像">
+
+    <script>
+        function showImage() {
+            document.getElementById("start").style.display = "none";
+            document.getElementById("main-image").style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
